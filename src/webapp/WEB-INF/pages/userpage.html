@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Users table</h2>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>E-mail</th>
+        <th>Role</th>
+    </tr>
+    <th:block th:object="${user}">
+        <tr>
+            <td th:utext="${user.id}"></td>
+            <td th:utext="${user.name}"></td>
+            <td th:utext="${user.password}"></td>
+            <td th:utext="${user.email}"></td>
+            <td th:utext="${user.roles}"></td>
+        </tr>
+    </th:block>
+</table>
+
+<a th:href="@{/logout}">LogOut</a>
+</body>
+</html>
+
+<!--<div style="text-align:left; padding:5px; margin:5px 0px; background:#ccc;">-->
+<!--    <a th:href="@{/}">Go to Users</a>-->
+<!--&lt;!&ndash;    TODO поменять референс на что-то связанное с заданием&ndash;&gt;-->
+<!--</div>-->
+<!--<form th:action="@{/edit}" th:object="${user}">-->
+<!--    <input type="hidden" name="id" th:value="${user.id}">-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Password</th>-->
+<!--        <th>E-mail</th>-->
+<!--        <th>Role</th>-->
+<!--        <th>Edit</th>-->
+<!--        <th>Delete</th>-->
+<!--    </tr>-->
+<!--    <th:block th:each="user : ${listUsers}">-->
+<!--        <tr>-->
+<!--            <td th:utext="${user.id}"></td>-->
+<!--            <td th:utext="${user.name}"></td>-->
+<!--            <td th:utext="${user.password}"></td>-->
+<!--            <td th:utext="${user.email}"></td>-->
+<!--            <th:block th:each="role : ${user.roles}">-->
+<!--                <h1 th:text="${role}"></h1>-->
+<!--            </th:block>-->
+<!--    <input type="submit" value="Edit user">-->
+<!--    </th:block>-->
+<!--</form>-->
+<!--</body>-->
