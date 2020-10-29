@@ -26,11 +26,13 @@
             <label th:for="email">E-mail     </label>
             <input type="text" name="email" th:id="email" th:value="${user.email}">
         </p>
+        <p>
         <label th:for="roles">Roles </label>
         <select multiple name="roles" size="3" th:id="roles" required th:value="${user.roles}">
             <option disabled>Select roles</option>
             <option th:each="role : ${allRoles}" th:value="${role}" th:text="${role.name}"></option>
         </select>
+        </p>
     </fieldset>
 
     <input type="submit" value="Edit user">
